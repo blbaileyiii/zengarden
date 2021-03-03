@@ -1,0 +1,20 @@
+$color-border: blue;
+
+header,
+footer,
+.summary,
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements,
+.sidebar {
+    border-color: $color-border;
+}
+
+@media only screen and (min-width: 40rem) {
+
+    .design-selection {
+        border-color: $color-border;
+    }
+}

@@ -1,0 +1,149 @@
+// VARIABLES:
+
+// breakpoints:
+
+$M: 40rem;
+$L: 70rem;
+
+// dimensions:
+
+$console-width: 30vw;
+$border-width: 1px;
+
+// positions:
+
+$side-bar-top: 0;
+$console-1st-row-top: 15vh;
+$console-2nd-row-top: 50vh;
+$console-row-position: 15vw;
+
+
+// MIXINS
+
+@mixin boxes {
+	position: fixed;
+	width: $console-width;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem;
+}
+
+.intro {
+  order: 1;
+}
+
+.main {
+  order: 3;
+}
+
+.sidebar {
+  order: 2;
+}
+
+header,
+footer,
+.summary,
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements,
+.sidebar {
+  border-width: $border-width;
+  border-style: solid;
+  margin: 1rem 0;
+}
+
+@media only screen and (min-width: $M) {
+	.page-wrapper {
+		margin: 0 5rem;
+	}
+
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.design-selection {
+		grid-row: span 2;
+		border-right-width: $border-width;
+		border-right-style: solid;
+		align-self: stretch; 
+	}
+
+	.zen-resources {
+		grid-column: 2 / 3;
+	}
+}
+
+@media only screen and (min-width: $L) {
+  header,
+  footer,
+  .summary,
+  .preamble,
+  .explanation,
+  .participation,
+  .benefits,
+  .requirements,
+  .sidebar {
+    margin: 0;
+  }
+
+  .intro {
+    position: fixed;
+    top: 0;
+    left: 50vw;
+    transform: translate(-50%, 0);
+  }
+
+  .preamble {
+    @include boxes;
+    top: $console-1st-row-top;
+    transform: translate(-33%, 0);
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: $console-2nd-row-top;
+    width: 8vw;
+    height: 90vh;
+    transform: translate(0, -50%);
+  }
+
+  .main {
+    @include boxes;
+    top: $console-2nd-row-top;
+    left: $console-row-position;
+  }
+
+  .explanation {
+    @include boxes;
+    top: $console-1st-row-top;
+    right: $console-row-position;
+  }
+
+  .requirements {
+    @include boxes;
+    top: $console-2nd-row-top;
+    right: $console-row-position;
+  }
+
+  .wrapper {
+    display: block;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 50vw;
+    transform: translate(-50%, 0);
+  }
+
+  .design-selection {
+    border: none;
+  }
+}
