@@ -12,8 +12,8 @@ html {
     position: relative;
   }
   html::after {
-    content: "Purple";
-    background-image: url('city-image.jpg');
+    content: "";
+    background-image: url('/assets/city-image.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;

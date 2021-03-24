@@ -146,7 +146,7 @@ html {
 
 html::after {
   content: "";
-  background-image: url("/assets/city-image.jpg");
+  background-image: url("/city-image.b9120d73.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -160,4 +160,7 @@ html::after {
   -webkit-filter: blur(3px);
 }
 
-/*# sourceMappingURL=style.css.map */
+
+
+
+/*# sourceMappingURL=/style.css.map */
