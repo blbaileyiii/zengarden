@@ -6,16 +6,18 @@ $M: 40rem;
 $L: 70rem;
 
 // dimensions:
-
-$console-width: 30vw;
+$console-w-narrow: 17vw;
+$console-w-expanded: 58vw;
 $border-width: 1px;
+$console-maxh-narrow: 3.5rem;
+$console-maxh-expanded: 50rem;
 
 // positions:
-
 $side-bar-top: 0;
-$console-1st-row-top: 15vh;
-$console-2nd-row-top: 50vh;
-$console-row-position: 15vw;
+$console-p-column: 20vw;
+$console-m-column: 50vw;
+$console-p-row: 20vh;
+$console-m-row: 50vh;
 
 // colors:
 

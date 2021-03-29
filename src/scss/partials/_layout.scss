@@ -1,8 +1,17 @@
 // MIXINS
 
-@mixin boxes {
-	position: fixed;
-	width: $console-width;
+@mixin contract {
+  position: fixed;
+  width: $console-w-narrow;
+  max-height: $console-maxh-narrow;
+  overflow: hidden;
+  padding: 0 1vw;
+  animation: contract-console 2s;
+  transition: all 300ms ease;
+}
+
+@mixin expand {
+  animation: expand-console 2s forwards;
 }
 
 .page-wrapper {
@@ -76,40 +85,85 @@ footer,
     position: fixed;
     top: 0;
     left: 50vw;
+    transform: translate(-50%, -95%);
+    transition: transform 2s ease-in-out;
+  }
+
+  .intro::after {
+    content: "CSS Zen Garden";
+  }
+
+  .intro:hover {
     transform: translate(-50%, 0);
   }
 
-  .preamble {
-    @include boxes;
-    top: $console-1st-row-top;
-    transform: translate(-33%, 0);
+  header > *{
+    margin: 1rem;
   }
 
   .sidebar {
     position: fixed;
     left: 0;
-    top: $console-2nd-row-top;
-    width: 8vw;
+    top: 50vh;
+    width: 10rem;
     height: 90vh;
+    padding: 0.75rem;
+    transform: translate(-11rem, -50%);
+    transition: transform 2s ease-in-out;
+
+  }
+
+  .sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .sidebar:before {
+    content: "Navigation";
+    position: absolute;
+    width: 10rem;
+    transform: rotate(90deg) translate(40%, -6.5rem);
+  }
+
+  .sidebar:hover {
     transform: translate(0, -50%);
   }
 
-  .main {
-    @include boxes;
-    top: $console-2nd-row-top;
-    left: $console-row-position;
+  .explanation {
+    @include contract;
+    top: $console-p-row;
+    left: $console-p-column;
+    &:hover {
+      @include expand;
+    }
   }
 
-  .explanation {
-    @include boxes;
-    top: $console-1st-row-top;
-    right: $console-row-position;
+  .participation {
+    @include contract;
+    bottom: $console-p-row;
+    left: $console-p-column;
+    &:hover {
+      @include expand;
+    }
   }
+
+  .benefits {
+    @include contract;
+    bottom: $console-p-row;
+    right: $console-p-column;
+    &:hover {
+      @include expand;
+    }
+  }  
 
   .requirements {
-    @include boxes;
-    top: $console-2nd-row-top;
-    right: $console-row-position;
+    @include contract;
+    top: $console-p-row;
+    right: $console-p-column;
+    &:hover {
+      @include expand;
+    }
   }
 
   .wrapper {
@@ -125,5 +179,35 @@ footer,
 
   .design-selection {
     border: none;
+  }
+
+  @keyframes expand-console {
+    0% {
+      width: $console-w-narrow;
+      max-height: $console-maxh-narrow;
+    }
+    50% {
+      width: $console-w-expanded;
+      max-height: $console-maxh-narrow;
+    }
+    100% {
+      width: $console-w-expanded;      
+      max-height: $console-maxh-expanded;
+    }
+  }
+
+  @keyframes contract-console {
+    100% {
+      width: $console-w-narrow;
+      max-height: $console-maxh-narrow;
+    }
+    50% {
+      width: $console-w-expanded;
+      max-height: $console-maxh-narrow;
+    }
+    0% {
+      width: $console-w-expanded;      
+      max-height: $console-maxh-expanded;
+    }
   }
 }
