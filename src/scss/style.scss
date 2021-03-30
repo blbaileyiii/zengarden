@@ -8,22 +8,3 @@
 
 // cd _Projects\_College\WDD331\zengarden\src\scss\
 // sass --watch style.scss:../style.css
-
-html {
-    position: relative;
-  }
-  html::after {
-    content: "";
-    background-image: url('/assets/city-image.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    z-index: -1;   
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-  }

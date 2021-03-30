@@ -1,3 +1,25 @@
+html {
+  position: relative;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  background-image: url("/assets/city-image.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -3;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -52,6 +74,24 @@ footer,
   }
 }
 @media only screen and (min-width: 70rem) {
+  html::before {
+    content: "";
+    position: fixed;
+    background-image: url("/assets/city-image.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 100%;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -3;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+  }
+
   header,
 footer,
 .summary,
@@ -93,6 +133,7 @@ footer,
     padding: 0.75rem;
     transform: translate(-11rem, -50%);
     transition: transform 2s ease-in-out;
+    background-image: url("/assets/side-interface.svg");
   }
 
   .sidebar ul {
@@ -120,6 +161,9 @@ footer,
     padding: 0 1vw;
     animation: contract-console 2s;
     transition: all 300ms ease;
+    background-image: url("/assets/interface.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     top: 20vh;
     left: 20vw;
   }
@@ -135,6 +179,9 @@ footer,
     padding: 0 1vw;
     animation: contract-console 2s;
     transition: all 300ms ease;
+    background-image: url("/assets/interface.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     bottom: 20vh;
     left: 20vw;
   }
@@ -150,6 +197,9 @@ footer,
     padding: 0 1vw;
     animation: contract-console 2s;
     transition: all 300ms ease;
+    background-image: url("/assets/interface.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     bottom: 20vh;
     right: 20vw;
   }
@@ -165,6 +215,9 @@ footer,
     padding: 0 1vw;
     animation: contract-console 2s;
     transition: all 300ms ease;
+    background-image: url("/assets/interface.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     top: 20vh;
     right: 20vw;
   }
@@ -191,6 +244,7 @@ footer,
     0% {
       width: 17vw;
       max-height: 3.5rem;
+      z-index: 3;
     }
     50% {
       width: 58vw;
@@ -199,12 +253,14 @@ footer,
     100% {
       width: 58vw;
       max-height: 50rem;
+      z-index: 3;
     }
   }
   @keyframes contract-console {
     100% {
       width: 17vw;
       max-height: 3.5rem;
+      z-index: 3;
     }
     50% {
       width: 58vw;
@@ -213,9 +269,14 @@ footer,
     0% {
       width: 58vw;
       max-height: 50rem;
+      z-index: 3;
     }
   }
 }
+* {
+  color: white;
+}
+
 header,
 footer,
 .summary,
@@ -232,25 +293,6 @@ footer,
   .design-selection {
     border-color: blue;
   }
-}
-html {
-  position: relative;
-}
-
-html::after {
-  content: "";
-  background-image: url("/assets/city-image.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: -1;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
 }
 
 /*# sourceMappingURL=style.css.map */
