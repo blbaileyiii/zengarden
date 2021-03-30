@@ -188,7 +188,7 @@ footer {
     height: 100vh;
   }
 
-  .page-wrapper:before {
+  .extra1:before {
     content: "";
     position: fixed;
     top: 50vh;
@@ -201,7 +201,7 @@ footer {
     border: 7px double #d8e1f3;
   }
 
-  .page-wrapper:after {
+  .extra1:after {
     content: "";
     position: fixed;
     top: 50vh;
@@ -214,18 +214,6 @@ footer {
     border: 5px solid #d8e1f3;
   }
 
-  .extra1:before {
-    content: "";
-    position: fixed;
-    top: 42vh;
-    bottom: 42vh;
-    left: 35vw;
-    right: 35vw;
-    border-radius: 3rem;
-    z-index: -2;
-    background-image: linear-gradient(90deg, #d8e1f3 1%, #1c499b00 1%, #1c499b00 2%, #d8e1f3 2%, #d8e1f3 3%, #1c499b00 3%, #1c499b00 4%, #d8e1f3 4%, #d8e1f3 5%, #1c499b00 5%, #1c499b00 95%, #d8e1f3 95%, #d8e1f3 96%, #1c499b00 96%, #1c499b00 97%, #d8e1f3 97%, #d8e1f3 98%, #1c499b00 98%, #1c499b00 99%, #d8e1f3 99%, #d8e1f3 100%);
-  }
-
   .sidebar {
     position: fixed;
     left: 0;
@@ -234,6 +222,15 @@ footer {
     height: 90vh;
     transform: translate(-13rem, -50%);
     transition: transform 2s ease-in-out;
+  }
+  .sidebar:before {
+    content: "Navigation";
+    position: absolute;
+    width: 13rem;
+    transform: rotate(90deg) translate(40%, -6.5rem);
+  }
+  .sidebar:hover {
+    transform: translate(-3px, -50%);
   }
 
   .intro div p,
@@ -256,7 +253,6 @@ footer,
   .main > div h3 {
     position: relative;
   }
-
   .main > div h3:before {
     content: "";
     position: absolute;
@@ -269,7 +265,6 @@ footer,
     border-top: 6px solid #d8e1f3;
     top: 0;
   }
-
   .main > div h3:after {
     content: "";
     position: absolute;
@@ -290,15 +285,12 @@ footer,
     transform: translate(-50%, -97%);
     transition: transform 2s ease-in-out;
   }
-
   .intro > div {
     background: #1c499b8c;
   }
-
   .intro::after {
     content: "CSS Zen Garden";
   }
-
   .intro:hover {
     transform: translate(-50%, 0);
   }
@@ -315,17 +307,6 @@ footer,
 
   header > * {
     margin: 1rem;
-  }
-
-  .sidebar:before {
-    content: "Navigation";
-    position: absolute;
-    width: 13rem;
-    transform: rotate(90deg) translate(40%, -6.5rem);
-  }
-
-  .sidebar:hover {
-    transform: translate(-3px, -50%);
   }
 
   .explanation {
@@ -437,6 +418,18 @@ footer,
 
   .design-selection {
     border: none;
+  }
+
+  .extra2:before {
+    content: "";
+    position: fixed;
+    top: 42vh;
+    bottom: 42vh;
+    left: 35vw;
+    right: 35vw;
+    border-radius: 3rem;
+    z-index: -2;
+    background-image: linear-gradient(90deg, #d8e1f3 1%, #1c499b00 1%, #1c499b00 2%, #d8e1f3 2%, #d8e1f3 3%, #1c499b00 3%, #1c499b00 4%, #d8e1f3 4%, #d8e1f3 5%, #1c499b00 5%, #1c499b00 95%, #d8e1f3 95%, #d8e1f3 96%, #1c499b00 96%, #1c499b00 97%, #d8e1f3 97%, #d8e1f3 98%, #1c499b00 98%, #1c499b00 99%, #d8e1f3 99%, #d8e1f3 100%);
   }
 
   @keyframes expand-console {

@@ -8,9 +8,6 @@
   overflow: hidden;
   animation: contract-console 2s;
   transition: all 300ms ease;
-  // background-image: url('/assets/interface.svg');
-  // background-repeat: no-repeat;
-  // background-size: 100% 100%;
   p {
     @include p-contract;
   }
@@ -207,32 +204,6 @@ footer {
     height: 100vh;
   }
 
-  .page-wrapper:before {
-    @include extras;
-    width: $inner-c-radius;
-    height: $inner-c-radius;
-    border: 7px double $brd-hl;
-  }
-
-  .page-wrapper:after {
-    @include extras;
-    width: $outer-c-radius;
-    height: $outer-c-radius;
-    border: 5px solid $brd-hl;
-  }
-
-  .extra1:before {
-    content: "";
-    position: fixed;
-    top: $console-c-row;
-    bottom: $console-c-row;
-    left: $console-c-column;
-    right: $console-c-column;
-    border-radius: 3rem;
-    z-index: -2;
-    background-image: linear-gradient(90deg, $brd-hl 1%, $screen-tr-full 1%, $screen-tr-full 2%, $brd-hl 2%, $brd-hl 3%, $screen-tr-full 3%, $screen-tr-full 4%, $brd-hl 4%, $brd-hl 5%, $screen-tr-full 5%, $screen-tr-full 95%, $brd-hl 95%, $brd-hl 96%, $screen-tr-full 96%, $screen-tr-full 97%, $brd-hl 97%, $brd-hl 98%, $screen-tr-full 98%, $screen-tr-full 99%, $brd-hl 99%, $brd-hl 100%  );
-  }
-
   .sidebar {
     position: fixed;
     left: 0;
@@ -241,6 +212,15 @@ footer {
     height: 90vh;
     transform: translate(-13rem, -50%);
     transition: transform 2s ease-in-out;
+    &:before {
+      content: "Navigation";
+      position: absolute;
+      width: 13rem;
+      transform: rotate(90deg) translate(40%, -6.5rem);
+    }
+    &:hover {
+      transform: translate(-$border-width, -50%);
+    }
   }
 
   .intro div p,
@@ -262,18 +242,16 @@ footer {
 
   .main > div h3 {
     position: relative;
-  }
-
-  .main > div h3:before {
-    @include interface-deco;
-    border-top: $header-border-deco-w solid $brd-hl;
-    top: 0;
-  }
-
-  .main > div h3:after {
-    @include interface-deco;
-    border-bottom: $header-border-deco-w solid $brd-hl;
-    bottom: 0;
+    &:before {
+      @include interface-deco;
+      border-top: $header-border-deco-w solid $brd-hl;
+      top: 0;
+    }
+    &:after {
+      @include interface-deco;
+      border-bottom: $header-border-deco-w solid $brd-hl;
+      bottom: 0;
+    }
   }
 
   .intro {
@@ -282,27 +260,24 @@ footer {
     left: $console-m-column;
     transform: translate(-50%, -97%);
     transition: transform 2s ease-in-out;
-  }
-
-  .intro > div {
-    background: $screen-tr;
-  }
-
-  .intro::after {
-    content: "CSS Zen Garden";
-  }
-
-  .intro:hover {
-    transform: translate(-50%, 0);
-    ~ .main .explanation,
-    ~ .main .participation {
-      left: $console-a-column;
-      transform: translate(-50%, 0);
+    > div {
+      background: $screen-tr;
     }
-    ~ .main .requirements,
-    ~ .main .benefits{
-      right: $console-a-column;
-      transform: translate(50%, 0);
+    &::after {
+      content: "CSS Zen Garden";
+    }
+    &:hover {
+      transform: translate(-50%, 0);
+      ~ .main .explanation,
+      ~ .main .participation {
+        left: $console-a-column;
+        transform: translate(-50%, 0);
+      }
+      ~ .main .requirements,
+      ~ .main .benefits{
+        right: $console-a-column;
+        transform: translate(50%, 0);
+      }
     }
   }
 
@@ -310,16 +285,7 @@ footer {
     margin: 1rem;
   }
 
-  .sidebar:before {
-    content: "Navigation";
-    position: absolute;
-    width: 13rem;
-    transform: rotate(90deg) translate(40%, -6.5rem);
-  }
-
-  .sidebar:hover {
-    transform: translate(-$border-width, -50%);
-  }
+  
 
   .explanation {
     @include contract;
@@ -360,6 +326,37 @@ footer {
   .design-selection {
     border: none;
   }
+
+  .extra1 {
+    &:before {
+      @include extras;
+      width: $inner-c-radius;
+      height: $inner-c-radius;
+      border: 7px double $brd-hl;
+    }
+    &:after {
+      @include extras;
+      width: $outer-c-radius;
+      height: $outer-c-radius;
+      border: 5px solid $brd-hl;
+    }
+  }
+
+  .extra2{
+    &:before {
+      content: "";
+      position: fixed;
+      top: $console-c-row;
+      bottom: $console-c-row;
+      left: $console-c-column;
+      right: $console-c-column;
+      border-radius: 3rem;
+      z-index: -2;
+      background-image: linear-gradient(90deg, $brd-hl 1%, $screen-tr-full 1%, $screen-tr-full 2%, $brd-hl 2%, $brd-hl 3%, $screen-tr-full 3%, $screen-tr-full 4%, $brd-hl 4%, $brd-hl 5%, $screen-tr-full 5%, $screen-tr-full 95%, $brd-hl 95%, $brd-hl 96%, $screen-tr-full 96%, $screen-tr-full 97%, $brd-hl 97%, $brd-hl 98%, $screen-tr-full 98%, $screen-tr-full 99%, $brd-hl 99%, $brd-hl 100%  );
+    }
+  }
+
+  // Animations
 
   @keyframes expand-console {
     0% {
