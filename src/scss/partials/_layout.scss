@@ -3,33 +3,59 @@
 @mixin contract {
   position: fixed;
   width: $console-w-narrow;
+  min-width: $console-minw-narrow;
   max-height: $console-maxh-narrow;
   overflow: hidden;
-  padding: 0 1vw;
   animation: contract-console 2s;
   transition: all 300ms ease;
-  background-image: url('/assets/interface.svg');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  // background-image: url('/assets/interface.svg');
+  // background-repeat: no-repeat;
+  // background-size: 100% 100%;
+  background: $screen-tr;
+  p {
+    @include p-contract;
+  }
+  &:hover {
+    @include expand;
+    p {
+      @include p-expand;
+    }
+    h3 {
+      @include h-expand;
+    }
+  }
+}
+
+@mixin p-contract {
+  display: none;
 }
 
 @mixin expand {
   animation: expand-console 2s forwards;
 }
 
+@mixin p-expand {
+  display: block;
+}
+
+@mixin h-expand {
+  background: $screen-bg;
+}
+
 html {
   position: relative;
+  background-image: url('/assets/city-image.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
 
 }
 
 html::before {
   content: "";
   position: fixed;
-  background-image: url('/assets/city-image.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: 100% 100%;
+  background-color: $screen-tr;
   top: 0;
   left: 0;
   right: 0;
@@ -68,8 +94,73 @@ footer,
 .requirements,
 .sidebar {
   border-width: $border-width;
-  border-style: solid;
+  border-style: double;
   margin: 1rem 0;
+}
+
+.sidebar {
+  padding: 0.75rem;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 0.5rem 0;
+}
+
+.main div h3 {
+  background: #1c499b7a;
+  padding: 1rem;
+  margin: 0;
+  text-shadow: $text-shadow-offset $text-shadow-offset $screen-bg,
+              $text-shadow-offset-n $text-shadow-offset $screen-bg,
+              $text-shadow-offset-n $text-shadow-offset-n $screen-bg,
+              $text-shadow-offset $text-shadow-offset-n $screen-bg;
+}
+
+.main div p {
+  border-top: $inner-border-w solid $color-border;
+  border-bottom: $inner-border-w solid $color-border;
+  border-left: $inner-border-w solid $color-border-tr;
+  border-right: $inner-border-w solid $color-border-tr;
+  padding: 1rem;
+  margin: 0;
+  background: $screen-tr;
+  position: relative;
+}
+
+.main div p:before {
+  content: "";
+  position: absolute;
+  width: 4rem;
+  margin: auto;
+  top: -3px;
+  left: 0;
+  right: 0;
+  border-top: $inner-border-deco-w solid white;
+  border-left: $inner-border-deco-w solid $color-border-tr;
+  border-right: $inner-border-deco-w solid $color-border-tr;
+}
+
+.main div p:after {
+  content: "";
+  position: absolute;
+  width: 4rem;
+  margin: auto;
+  left: 0;
+  bottom: -3px;
+  right: 0;
+  border-bottom: $inner-border-deco-w solid white;
+  border-left: $inner-border-deco-w solid $color-border-tr;
+  border-right: $inner-border-deco-w solid $color-border-tr;
+}
+
+footer {
+  padding: 1rem;
 }
 
 @media only screen and (min-width: $M) {
@@ -97,24 +188,24 @@ footer,
 @media only screen and (min-width: $L) {
 
   html::before {
-    content: "";
-    position: fixed;
-    background-image: url('/assets/city-image.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: 100% 100%;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
-    position: absolute;
-    z-index: -3;
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
   }
 
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 50vh;
+    width: 11.5rem;
+    height: 90vh;
+    transform: translate(-13rem, -50%);
+    transition: transform 2s ease-in-out;
+    background-image: url('/assets/side-interface.svg');
+  }
 
+  .main div p {
+    margin: 1rem;
+  }
 
   header,
   footer,
@@ -144,31 +235,15 @@ footer,
     transform: translate(-50%, 0);
   }
 
+  .intro:hover + .main{
+    //transform: 
+  }
+
   header > *{
     margin: 1rem;
   }
 
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 50vh;
-    width: 11.5rem;
-    height: 90vh;
-    padding: 0.75rem;
-    transform: translate(-12.5rem, -50%);
-    transition: transform 2s ease-in-out;
-    background-image: url('/assets/side-interface.svg');
-  }
-
-  .sidebar ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  .sidebar li {
-    margin: 0.5rem 0;
-  }
+  
 
   .sidebar:before {
     content: "Navigation";
@@ -178,43 +253,32 @@ footer,
   }
 
   .sidebar:hover {
-    transform: translate(0, -50%);
+    transform: translate(-$border-width, -50%);
   }
 
   .explanation {
     @include contract;
     top: $console-p-row;
     left: $console-p-column;
-    &:hover {
-      @include expand;
-    }
   }
 
   .participation {
     @include contract;
     bottom: $console-p-row;
     left: $console-p-column;
-    &:hover {
-      @include expand;
-    }
+    
   }
 
   .benefits {
     @include contract;
     bottom: $console-p-row;
     right: $console-p-column;
-    &:hover {
-      @include expand;
-    }
   }  
 
   .requirements {
     @include contract;
     top: $console-p-row;
     right: $console-p-column;
-    &:hover {
-      @include expand;
-    }
   }
 
   .wrapper {
@@ -242,10 +306,14 @@ footer,
       width: $console-w-expanded;
       max-height: $console-maxh-narrow;
     }
+    99% {
+      overflow: hidden;
+    }
     100% {
       width: $console-w-expanded;      
       max-height: $console-maxh-expanded;
-      z-index: 3;
+      z-index: 3;      
+      overflow: auto;
     }
   }
 

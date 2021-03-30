@@ -6,11 +6,16 @@ $M: 40rem;
 $L: 70rem;
 
 // dimensions:
-$console-w-narrow: 17vw;
-$console-w-expanded: 58vw;
-$border-width: 1px;
+$console-w-narrow: 20vw;
+$console-minw-narrow: 17rem;
+$console-w-expanded: 100vw - ($console-w-narrow) * 2;
+$border-width: 3px;
 $console-maxh-narrow: 3.5rem;
-$console-maxh-expanded: 50rem;
+$console-maxh-expanded: 60vh;
+$inner-border-w: 6px;
+$inner-border-deco-w: 8px;
+$text-shadow-offset: 2px;
+$text-shadow-offset-n: -$text-shadow-offset;
 
 // positions:
 $side-bar-top: 0;
@@ -21,10 +26,12 @@ $console-m-row: 50vh;
 
 // colors:
 
-$color-border: blue;
-$txt-color: white;
-$txt-shadow: lightblue;
-$screen-bg: lightgray;
-$brd-hl: blue;
-$brd-ll: lightblue;
-$accent: yellow;
+$color-border: #3fc1c3;
+$color-border-tr: #3fc1c300;
+$txt-color: #fff;
+$txt-shadow: #020f26;
+$screen-bg: #1c499b;
+$screen-tr: #1c499b8c;
+$brd-hl: #d8e1f3;
+$brd-ll: #3fc1c3;
+$accent: #3fc1c3;
