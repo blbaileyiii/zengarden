@@ -11,7 +11,6 @@
   // background-image: url('/assets/interface.svg');
   // background-repeat: no-repeat;
   // background-size: 100% 100%;
-  background: $screen-tr;
   p {
     @include p-contract;
   }
@@ -42,6 +41,68 @@
   background: $screen-bg;
 }
 
+@mixin interface {
+  h1, h2, h3 {
+    background: $screen-tr;
+    padding: 1rem;
+    margin: 0;
+    text-shadow: $text-shadow-offset $text-shadow-offset $screen-bg,
+                 $text-shadow-offset-n $text-shadow-offset $screen-bg,
+                 $text-shadow-offset-n $text-shadow-offset-n $screen-bg,
+                 $text-shadow-offset $text-shadow-offset-n $screen-bg;
+  }
+  > div {
+    background: $screen-tr;
+  }
+  p {
+    border-top: $inner-border-w solid $color-border;
+    border-bottom: $inner-border-w solid $color-border;
+    border-left: $inner-border-w solid $color-border-tr;
+    border-right: $inner-border-w solid $color-border-tr;
+    padding: 1rem;
+    margin: 0;
+    background: $screen-tr;
+    position: relative;
+    &:before {
+      @include interface-deco;
+      border-top: $inner-border-deco-w solid white;
+      top: -$border-width;
+    }
+    &:after {
+      @include interface-deco;
+      border-bottom: $inner-border-deco-w solid white;
+      bottom: -$border-width;
+    }
+  }
+}
+
+@mixin interface-deco {
+  content: "";
+  position: absolute;
+  width: 4rem;
+  margin: auto;  
+  left: 0;
+  right: 0;
+  border-left: $inner-border-deco-w solid $color-border-tr;
+  border-right: $inner-border-deco-w solid $color-border-tr;
+}
+
+@mixin extras {
+  content: "";
+  position: fixed;
+  top: $console-m-row;
+  left: $console-m-column;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  z-index: -2;
+}
+
+// Layout
+
+* {
+  color: $txt-color;
+}
+
 html {
   position: relative;
   background-image: url('/assets/city-image.jpg');
@@ -49,21 +110,19 @@ html {
   background-attachment: fixed;
   background-position: center;
   background-size: 100% 100%;
-
-}
-
-html::before {
-  content: "";
-  position: fixed;
-  background-color: $screen-tr;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  z-index: -3;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
+  &::before {
+    content: "";
+    position: fixed;
+    background-color: $screen-tr;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: -3;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+  }
 }
 
 .page-wrapper {
@@ -74,15 +133,29 @@ html::before {
 
 .intro {
   order: 1;
-}
-
-.main {
-  order: 3;
+  @include interface;
 }
 
 .sidebar {
   order: 2;
+  padding: 0.75rem;
+  background: $screen-tr;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  li {
+    margin: 0.5rem 0;
+  }
 }
+
+.main {
+  order: 3;
+  @include interface;
+}
+
+
 
 header,
 footer,
@@ -93,74 +166,13 @@ footer,
 .benefits,
 .requirements,
 .sidebar {
-  border-width: $border-width;
-  border-style: double;
+  border: $border-width double $color-border;
   margin: 1rem 0;
-}
-
-.sidebar {
-  padding: 0.75rem;
-}
-
-.sidebar ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.sidebar li {
-  margin: 0.5rem 0;
-}
-
-.main div h3 {
-  background: #1c499b7a;
-  padding: 1rem;
-  margin: 0;
-  text-shadow: $text-shadow-offset $text-shadow-offset $screen-bg,
-              $text-shadow-offset-n $text-shadow-offset $screen-bg,
-              $text-shadow-offset-n $text-shadow-offset-n $screen-bg,
-              $text-shadow-offset $text-shadow-offset-n $screen-bg;
-}
-
-.main div p {
-  border-top: $inner-border-w solid $color-border;
-  border-bottom: $inner-border-w solid $color-border;
-  border-left: $inner-border-w solid $color-border-tr;
-  border-right: $inner-border-w solid $color-border-tr;
-  padding: 1rem;
-  margin: 0;
-  background: $screen-tr;
-  position: relative;
-}
-
-.main div p:before {
-  content: "";
-  position: absolute;
-  width: 4rem;
-  margin: auto;
-  top: -3px;
-  left: 0;
-  right: 0;
-  border-top: $inner-border-deco-w solid white;
-  border-left: $inner-border-deco-w solid $color-border-tr;
-  border-right: $inner-border-deco-w solid $color-border-tr;
-}
-
-.main div p:after {
-  content: "";
-  position: absolute;
-  width: 4rem;
-  margin: auto;
-  left: 0;
-  bottom: -3px;
-  right: 0;
-  border-bottom: $inner-border-deco-w solid white;
-  border-left: $inner-border-deco-w solid $color-border-tr;
-  border-right: $inner-border-deco-w solid $color-border-tr;
 }
 
 footer {
   padding: 1rem;
+  border-bottom: none;
 }
 
 @media only screen and (min-width: $M) {
@@ -171,18 +183,21 @@ footer {
 	.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 	}
 
 	.design-selection {
 		grid-row: span 2;
 		border-right-width: $border-width;
 		border-right-style: solid;
+    border-color: $color-border;
 		align-self: stretch; 
 	}
 
 	.zen-resources {
 		grid-column: 2 / 3;
 	}
+
 }
 
 @media only screen and (min-width: $L) {
@@ -192,17 +207,43 @@ footer {
     height: 100vh;
   }
 
+  .page-wrapper:before {
+    @include extras;
+    width: $inner-c-radius;
+    height: $inner-c-radius;
+    border: 7px double $brd-hl;
+  }
+
+  .page-wrapper:after {
+    @include extras;
+    width: $outer-c-radius;
+    height: $outer-c-radius;
+    border: 5px solid $brd-hl;
+  }
+
+  .extra1:before {
+    content: "";
+    position: fixed;
+    top: $console-c-row;
+    bottom: $console-c-row;
+    left: $console-c-column;
+    right: $console-c-column;
+    border-radius: 3rem;
+    z-index: -2;
+    background-image: linear-gradient(90deg, $brd-hl 1%, $screen-tr-full 1%, $screen-tr-full 2%, $brd-hl 2%, $brd-hl 3%, $screen-tr-full 3%, $screen-tr-full 4%, $brd-hl 4%, $brd-hl 5%, $screen-tr-full 5%, $screen-tr-full 95%, $brd-hl 95%, $brd-hl 96%, $screen-tr-full 96%, $screen-tr-full 97%, $brd-hl 97%, $brd-hl 98%, $screen-tr-full 98%, $screen-tr-full 99%, $brd-hl 99%, $brd-hl 100%  );
+  }
+
   .sidebar {
     position: fixed;
     left: 0;
-    top: 50vh;
+    top: $console-m-row;
     width: 11.5rem;
     height: 90vh;
     transform: translate(-13rem, -50%);
     transition: transform 2s ease-in-out;
-    background-image: url('/assets/side-interface.svg');
   }
 
+  .intro div p,
   .main div p {
     margin: 1rem;
   }
@@ -219,12 +260,32 @@ footer {
     margin: 0;
   }
 
+  .main > div h3 {
+    position: relative;
+  }
+
+  .main > div h3:before {
+    @include interface-deco;
+    border-top: $header-border-deco-w solid $brd-hl;
+    top: 0;
+  }
+
+  .main > div h3:after {
+    @include interface-deco;
+    border-bottom: $header-border-deco-w solid $brd-hl;
+    bottom: 0;
+  }
+
   .intro {
     position: fixed;
     top: 0;
-    left: 50vw;
-    transform: translate(-50%, -95%);
+    left: $console-m-column;
+    transform: translate(-50%, -97%);
     transition: transform 2s ease-in-out;
+  }
+
+  .intro > div {
+    background: $screen-tr;
   }
 
   .intro::after {
@@ -233,17 +294,21 @@ footer {
 
   .intro:hover {
     transform: translate(-50%, 0);
-  }
-
-  .intro:hover + .main{
-    //transform: 
+    ~ .main .explanation,
+    ~ .main .participation {
+      left: $console-a-column;
+      transform: translate(-50%, 0);
+    }
+    ~ .main .requirements,
+    ~ .main .benefits{
+      right: $console-a-column;
+      transform: translate(50%, 0);
+    }
   }
 
   header > *{
     margin: 1rem;
   }
-
-  
 
   .sidebar:before {
     content: "Navigation";

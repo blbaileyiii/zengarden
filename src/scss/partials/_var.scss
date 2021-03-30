@@ -14,15 +14,25 @@ $console-maxh-narrow: 3.5rem;
 $console-maxh-expanded: 60vh;
 $inner-border-w: 6px;
 $inner-border-deco-w: 8px;
+$header-border-deco-w: 6px;
 $text-shadow-offset: 2px;
 $text-shadow-offset-n: -$text-shadow-offset;
+$inner-c-radius: 10vw;
+$outer-c-radius: 15vw;
 
 // positions:
 $side-bar-top: 0;
-$console-p-column: 20vw;
+$console-m-row: 50vh;
 $console-m-column: 50vw;
 $console-p-row: 20vh;
-$console-m-row: 50vh;
+$console-p-column: 20vw;
+$console-a-column: 12.5vw;
+$console-c-row: 42vh;
+$console-c-column: 35vw;
+
+
+
+
 
 // colors:
 
@@ -32,6 +42,7 @@ $txt-color: #fff;
 $txt-shadow: #020f26;
 $screen-bg: #1c499b;
 $screen-tr: #1c499b8c;
+$screen-tr-full: #1c499b00;
 $brd-hl: #d8e1f3;
 $brd-ll: #3fc1c3;
 $accent: #3fc1c3;
