@@ -188,32 +188,6 @@ footer {
     height: 100vh;
   }
 
-  .extra1:before {
-    content: "";
-    position: fixed;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
-    z-index: -2;
-    width: 10vw;
-    height: 10vw;
-    border: 7px double #d8e1f3;
-  }
-
-  .extra1:after {
-    content: "";
-    position: fixed;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
-    z-index: -2;
-    width: 15vw;
-    height: 15vw;
-    border: 5px solid #d8e1f3;
-  }
-
   .sidebar {
     position: fixed;
     left: 0;
@@ -418,6 +392,31 @@ footer,
 
   .design-selection {
     border: none;
+  }
+
+  .extra1:before {
+    content: "";
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: -2;
+    width: 10vw;
+    height: 10vw;
+    border: 7px double #d8e1f3;
+  }
+  .extra1:after {
+    content: "";
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: -2;
+    width: 15vw;
+    height: 15vw;
+    border: 5px solid #d8e1f3;
   }
 
   .extra2:before {
