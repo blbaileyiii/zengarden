@@ -152,10 +152,10 @@ footer,
     position: fixed;
     left: 0;
     top: 50vh;
-    width: 10rem;
+    width: 11.5rem;
     height: 90vh;
     padding: 0.75rem;
-    transform: translate(-11rem, -50%);
+    transform: translate(-12.5rem, -50%);
     transition: transform 2s ease-in-out;
     background-image: url('/assets/side-interface.svg');
   }
@@ -166,10 +166,14 @@ footer,
     list-style: none;
   }
 
+  .sidebar li {
+    margin: 0.5rem 0;
+  }
+
   .sidebar:before {
     content: "Navigation";
     position: absolute;
-    width: 10rem;
+    width: 13rem;
     transform: rotate(90deg) translate(40%, -6.5rem);
   }
 

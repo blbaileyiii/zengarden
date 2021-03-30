@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+html {
+    font-family: "Audiowide";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Orbitron";
+}
+
+:before, :after, footer, abbr, a {
+    font-family: "Major Mono Display";
+}
+
+abbr:hover, a:hover {
+    text-transform: lowercase;
+}
+
+.sidebar li {
+    font-size: 0.85rem;
+  }
+

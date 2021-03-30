@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 html {
   position: relative;
 }
@@ -128,10 +131,10 @@ footer,
     position: fixed;
     left: 0;
     top: 50vh;
-    width: 10rem;
+    width: 11.5rem;
     height: 90vh;
     padding: 0.75rem;
-    transform: translate(-11rem, -50%);
+    transform: translate(-12.5rem, -50%);
     transition: transform 2s ease-in-out;
     background-image: url("/side-interface.102b3b03.svg");
   }
@@ -142,10 +145,14 @@ footer,
     list-style: none;
   }
 
+  .sidebar li {
+    margin: 0.5rem 0;
+  }
+
   .sidebar:before {
     content: "Navigation";
     position: absolute;
-    width: 10rem;
+    width: 13rem;
     transform: rotate(90deg) translate(40%, -6.5rem);
   }
 
@@ -293,6 +300,25 @@ footer,
   .design-selection {
     border-color: blue;
   }
+}
+html {
+  font-family: "Audiowide";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Orbitron";
+}
+
+:before, :after, footer, abbr, a {
+  font-family: "Major Mono Display";
+}
+
+abbr:hover, a:hover {
+  text-transform: lowercase;
+}
+
+.sidebar li {
+  font-size: 0.85rem;
 }
 
 
