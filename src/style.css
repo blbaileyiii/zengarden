@@ -142,8 +142,11 @@ html::before {
   bottom: -3px;
 }
 
+body {
+  margin: 0;
+}
+
 header,
-footer,
 .summary,
 .preamble,
 .explanation,
@@ -153,6 +156,11 @@ footer,
 .sidebar {
   border: 3px double #3fc1c3;
   margin: 1rem 0;
+}
+
+footer {
+  border: 3px double #3fc1c3;
+  margin: 1rem 0 0;
 }
 
 footer {
