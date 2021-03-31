@@ -418,8 +418,8 @@ footer {
     &:before {
       content: "";
       position: fixed;
-      top: 3vw;
-      left: 3vw;
+      top: 2.75vw;
+      left: 2.75vw;
       width: $inner-c-radius / 2;
       height: $inner-c-radius / 2;
       z-index: -2;
@@ -431,8 +431,8 @@ footer {
     &:after {
       content: "";
       position: fixed;
-      bottom: 3vw;
-      left: 3vw;
+      bottom: 2.75vw;
+      left: 2.75vw;
       width: $inner-c-radius / 2;
       height: $inner-c-radius / 2;
       z-index: -2;
@@ -447,8 +447,8 @@ footer {
     &:before {
       content: "";
       position: fixed;
-      top: 3vw;
-      right: 3vw;
+      top: 2.75vw;
+      right: 2.75vw;
       width: $inner-c-radius / 2;
       height: $inner-c-radius / 2;
       z-index: -2;
@@ -460,8 +460,8 @@ footer {
     &:after {
       content: "";
       position: fixed;
-      bottom: 3vw;
-      right: 3vw;
+      bottom: 2.75vw;
+      right: 2.75vw;
       width: $inner-c-radius / 2;
       height: $inner-c-radius / 2;
       z-index: -2;
