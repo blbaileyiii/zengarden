@@ -308,6 +308,7 @@ footer,
   }
   .explanation:hover p {
     display: block;
+    background: #1c499b;
   }
 
   .participation {
@@ -333,6 +334,7 @@ footer,
   }
   .participation:hover p {
     display: block;
+    background: #1c499b;
   }
 
   .benefits {
@@ -358,6 +360,7 @@ footer,
   }
   .benefits:hover p {
     display: block;
+    background: #1c499b;
   }
 
   .requirements {
@@ -383,6 +386,7 @@ footer,
   }
   .requirements:hover p {
     display: block;
+    background: #1c499b;
   }
 
   .wrapper {

@@ -33,6 +33,7 @@
 
 @mixin p-expand {
   display: block;
+  background: $screen-bg;
 }
 
 @mixin h-expand {
