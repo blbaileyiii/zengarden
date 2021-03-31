@@ -20,5 +20,8 @@ abbr:hover, a:hover {
 
 .sidebar li {
     font-size: 0.85rem;
-  }
+}
 
+.intro::after {
+    font-size: 2rem;
+}

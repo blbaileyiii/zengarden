@@ -219,9 +219,6 @@ footer,
     margin: 0;
   }
 
-  .main > div p {
-    margin: 1rem;
-  }
   .main > div h3 {
     position: relative;
     text-align: center;
@@ -250,12 +247,15 @@ footer,
     border-bottom: 6px solid #d8e1f3;
     bottom: 0;
   }
+  .main > div p {
+    margin: 1rem;
+  }
 
   .intro {
     position: fixed;
     top: 0;
     left: 50vw;
-    transform: translate(-50%, -97%);
+    transform: translate(-50%, -95.5%);
     transition: transform 2s ease-in-out;
   }
   .intro > div {
@@ -302,12 +302,12 @@ footer,
   .explanation:hover {
     animation: expand-console 2s forwards;
   }
-  .explanation:hover p {
-    display: block;
-  }
   .explanation:hover h3 {
     background: #1c499b;
     text-align: left;
+  }
+  .explanation:hover p {
+    display: block;
   }
 
   .participation {
@@ -327,12 +327,12 @@ footer,
   .participation:hover {
     animation: expand-console 2s forwards;
   }
-  .participation:hover p {
-    display: block;
-  }
   .participation:hover h3 {
     background: #1c499b;
     text-align: left;
+  }
+  .participation:hover p {
+    display: block;
   }
 
   .benefits {
@@ -352,12 +352,12 @@ footer,
   .benefits:hover {
     animation: expand-console 2s forwards;
   }
-  .benefits:hover p {
-    display: block;
-  }
   .benefits:hover h3 {
     background: #1c499b;
     text-align: left;
+  }
+  .benefits:hover p {
+    display: block;
   }
 
   .requirements {
@@ -377,12 +377,12 @@ footer,
   .requirements:hover {
     animation: expand-console 2s forwards;
   }
-  .requirements:hover p {
-    display: block;
-  }
   .requirements:hover h3 {
     background: #1c499b;
     text-align: left;
+  }
+  .requirements:hover p {
+    display: block;
   }
 
   .wrapper {
@@ -600,6 +600,10 @@ abbr:hover, a:hover {
 
 .sidebar li {
   font-size: 0.85rem;
+}
+
+.intro::after {
+  font-size: 2rem;
 }
 
 
