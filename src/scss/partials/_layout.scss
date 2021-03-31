@@ -356,6 +356,122 @@ footer {
     }
   }
 
+  .extra3 {
+    &:before {
+      content: "";
+      position: fixed;
+      top: 2vw;
+      left: 2vw;
+      width: $inner-c-radius;
+      height: $inner-c-radius;
+      z-index: -2;
+      border-top: 5px solid $brd-hl;
+      border-left: 5px solid $brd-hl;
+      border-right: 5px solid $color-border-tr;
+      border-bottom: 5px solid $color-border-tr;
+    }
+    &:after {
+      content: "";
+      position: fixed;
+      bottom: 2vw;
+      left: 2vw;
+      width: $inner-c-radius;
+      height: $inner-c-radius;
+      z-index: -2;
+      border-top: 5px solid $color-border-tr;
+      border-left: 5px solid $brd-hl;
+      border-right: 5px solid $color-border-tr;
+      border-bottom: 5px solid $brd-hl;
+    }
+  }
+
+  .extra4 {
+    &:before {
+      content: "";
+      position: fixed;
+      top: 2vw;
+      right: 2vw;
+      width: $inner-c-radius;
+      height: $inner-c-radius;
+      z-index: -2;
+      border-top: 5px solid $brd-hl;
+      border-left: 5px solid $color-border-tr;
+      border-right: 5px solid $brd-hl;
+      border-bottom: 5px solid $color-border-tr;
+    }
+    &:after {
+      content: "";
+      position: fixed;
+      bottom: 2vw;
+      right: 2vw;
+      width: $inner-c-radius;
+      height: $inner-c-radius;
+      z-index: -2;
+      border-top: 5px solid $color-border-tr;
+      border-left: 5px solid $color-border-tr;
+      border-right: 5px solid $brd-hl;
+      border-bottom: 5px solid $brd-hl;
+    }
+  }
+
+  .extra5 {
+    &:before {
+      content: "";
+      position: fixed;
+      top: 3vw;
+      left: 3vw;
+      width: $inner-c-radius / 2;
+      height: $inner-c-radius / 2;
+      z-index: -2;
+      border-top: 5px solid $brd-ll;
+      border-left: 5px solid $brd-ll;
+      border-right: 5px solid $color-border-tr;
+      border-bottom: 5px solid $color-border-tr;
+    }
+    &:after {
+      content: "";
+      position: fixed;
+      bottom: 3vw;
+      left: 3vw;
+      width: $inner-c-radius / 2;
+      height: $inner-c-radius / 2;
+      z-index: -2;
+      border-top: 5px solid $color-border-tr;
+      border-left: 5px solid $brd-ll;
+      border-right: 5px solid $color-border-tr;
+      border-bottom: 5px solid $brd-ll;
+    }
+  }
+
+  .extra6 {
+    &:before {
+      content: "";
+      position: fixed;
+      top: 3vw;
+      right: 3vw;
+      width: $inner-c-radius / 2;
+      height: $inner-c-radius / 2;
+      z-index: -2;
+      border-top: 5px solid $brd-ll;
+      border-left: 5px solid $color-border-tr;
+      border-right: 5px solid $brd-ll;
+      border-bottom: 5px solid $color-border-tr;
+    }
+    &:after {
+      content: "";
+      position: fixed;
+      bottom: 3vw;
+      right: 3vw;
+      width: $inner-c-radius / 2;
+      height: $inner-c-radius / 2;
+      z-index: -2;
+      border-top: 5px solid $color-border-tr;
+      border-left: 5px solid $color-border-tr;
+      border-right: 5px solid $brd-ll;
+      border-bottom: 5px solid $brd-ll;
+    }
+  }
+
   // Animations
 
   @keyframes expand-console {
