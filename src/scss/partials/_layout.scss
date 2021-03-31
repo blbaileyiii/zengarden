@@ -13,11 +13,12 @@
   }
   &:hover {
     @include expand;
-    p {
-      @include p-expand;
-    }
     h3 {
       @include h-expand;
+      text-align: left;
+    }
+    p {
+      @include p-expand;
     }
   }
 }
@@ -223,11 +224,6 @@ footer {
     }
   }
 
-  .intro div p,
-  .main div p {
-    margin: 1rem;
-  }
-
   header,
   footer,
   .summary,
@@ -240,18 +236,24 @@ footer {
     margin: 0;
   }
 
-  .main > div h3 {
-    position: relative;
-    &:before {
-      @include interface-deco;
-      border-top: $header-border-deco-w solid $brd-hl;
-      top: 0;
+  .main > div {
+    h3 {
+      position: relative;
+      text-align: center;
+      &:before {
+        @include interface-deco;
+        border-top: $header-border-deco-w solid $brd-hl;
+        top: 0;
+      }
+      &:after {
+        @include interface-deco;
+        border-bottom: $header-border-deco-w solid $brd-hl;
+        bottom: 0;
+      }
     }
-    &:after {
-      @include interface-deco;
-      border-bottom: $header-border-deco-w solid $brd-hl;
-      bottom: 0;
-    }
+    p {
+      margin: 1rem;
+    }    
   }
 
   .intro {
@@ -262,6 +264,9 @@ footer {
     transition: transform 2s ease-in-out;
     > div {
       background: $screen-tr;
+      p {
+        margin: 1rem;
+      }
     }
     &::after {
       content: "CSS Zen Garden";

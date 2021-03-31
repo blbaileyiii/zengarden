@@ -207,11 +207,6 @@ footer {
     transform: translate(-3px, -50%);
   }
 
-  .intro div p,
-.main div p {
-    margin: 1rem;
-  }
-
   header,
 footer,
 .summary,
@@ -224,8 +219,12 @@ footer,
     margin: 0;
   }
 
+  .main > div p {
+    margin: 1rem;
+  }
   .main > div h3 {
     position: relative;
+    text-align: center;
   }
   .main > div h3:before {
     content: "";
@@ -261,6 +260,9 @@ footer,
   }
   .intro > div {
     background: #1c499b8c;
+  }
+  .intro > div p {
+    margin: 1rem;
   }
   .intro::after {
     content: "CSS Zen Garden";
@@ -305,6 +307,7 @@ footer,
   }
   .explanation:hover h3 {
     background: #1c499b;
+    text-align: left;
   }
 
   .participation {
@@ -329,6 +332,7 @@ footer,
   }
   .participation:hover h3 {
     background: #1c499b;
+    text-align: left;
   }
 
   .benefits {
@@ -353,6 +357,7 @@ footer,
   }
   .benefits:hover h3 {
     background: #1c499b;
+    text-align: left;
   }
 
   .requirements {
@@ -377,6 +382,7 @@ footer,
   }
   .requirements:hover h3 {
     background: #1c499b;
+    text-align: left;
   }
 
   .wrapper {
