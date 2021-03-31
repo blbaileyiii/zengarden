@@ -77,13 +77,17 @@
 
 @mixin interface-deco {
   content: "";
-  position: absolute;
   width: 4rem;
+  border-left: $inner-border-deco-w solid $color-border-tr;
+  border-right: $inner-border-deco-w solid $color-border-tr;
+  @include deco;
+}
+
+@mixin deco {  
+  position: absolute;
   margin: auto;  
   left: 0;
   right: 0;
-  border-left: $inner-border-deco-w solid $color-border-tr;
-  border-right: $inner-border-deco-w solid $color-border-tr;
 }
 
 @mixin extras {
@@ -215,7 +219,7 @@ footer {
     transform: translate(-13rem, -50%);
     transition: transform 2s ease-in-out;
     &:before {
-      content: "Navigation";
+      content: "△ Navigation △";
       position: absolute;
       width: 13rem;
       transform: rotate(90deg) translate(40%, -6.5rem);
@@ -261,7 +265,7 @@ footer {
     position: fixed;
     top: 0;
     left: $console-m-column;
-    transform: translate(-50%, -95.5%);
+    transform: translate(-50%, -98.5%);
     transition: transform 2s ease-in-out;
     > div {
       background: $screen-tr;
@@ -270,7 +274,9 @@ footer {
       }
     }
     &::after {
-      content: "CSS Zen Garden";
+      content: "⛛ CSS Zen Garden ⛛";
+      @include deco;
+      width: 28rem;
     }
     &:hover {
       transform: translate(-50%, 0);
